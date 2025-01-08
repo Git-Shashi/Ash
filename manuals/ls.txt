@@ -1,0 +1,26 @@
+LS(1)                     User Commands                    LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List information about the FILEs (the current directory by default).
+
+OPTIONS
+       -l     use a long listing format
+              This option provides detailed information about each file, including
+              file permissions, number of links, owner name, owner group, file size,
+              time of last modification, and the file name.
+
+       -a, --all
+              do not ignore entries starting with .
+              This option includes hidden files (those starting with a dot) in the
+              listing.
+
+       -R, --recursive
+              list subdirectories recursively
+              This option allows `ls` to list all files in the specified directory
+              and all its subdirectories.

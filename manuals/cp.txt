@@ -1,0 +1,44 @@
+NAME
+    cp - copy files and directories
+
+SYNOPSIS
+    cp <source_directory> <destination_directory>
+
+DESCRIPTION
+    The cp utility copies the contents of the source directory to the destination directory. If the destination directory does not exist, it will be created. The utility will recursively copy all files and subdirectories from the source to the destination.
+
+OPTIONS
+    None.
+
+USAGE
+    To copy the contents of a directory named 'source_dir' to a directory named 'dest_dir', use the following command:
+
+        ./cp source_dir dest_dir
+
+    If 'dest_dir' does not exist, it will be created. If it exists, the contents of 'source_dir' will be copied into it.
+
+EXIT STATUS
+    The cp utility exits with one of the following values:
+
+    0   Successful completion.
+    1   An error occurred.
+
+ERRORS
+    The following error messages may be displayed:
+
+    "Error opening source file" - The source file could not be opened for reading.
+    "Error opening destination file" - The destination file could not be opened for writing.
+    "Error writing to destination file" - There was an error writing data to the destination file.
+    "Error creating destination directory" - The destination directory could not be created.
+    "Error opening source directory" - The source directory could not be opened for reading.
+    "Error accessing source directory" - The source directory could not be accessed.
+    "Source is not a directory" - The specified source is not a directory.
+
+AUTHOR
+    Written by [Your Name].
+
+COPYRIGHT
+    This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+SEE ALSO
+    cp(1), mkdir(1), open(2), read(2), write(2), opendir(3), readdir(3), closedir(3)

@@ -1,0 +1,57 @@
+NAME
+
+rm - remove files or directories
+
+SYNOPSIS
+rm [-f] [-i] [-r|-R] [-d] [-v] file...
+
+DESCRIPTION
+The rm command removes each specified file. By default, it does not remove directories. However, when used with the -r or -R option, it will remove directories and their contents recursively.
+
+OPTIONS
+
+- -f
+  - Force: Ignore nonexistent files and arguments, never prompt. This option overrides -i.
+
+- -i
+  - Interactive: Prompt before every removal. The user must confirm each file or directory removal by typing 'y' or 'Y'.
+
+- -r, -R
+  - Recursive: Remove directories and their contents recursively. This option is necessary to remove non-empty directories.
+
+- -d
+  - Remove empty directories: Remove directories, even if they are empty. This option allows the removal of empty directories without using -r.
+
+- -v
+  - Verbose: Explain what is being done. The command will print the name of each file or directory it removes.
+
+USAGE
+
+To remove a file:
+rm file.txt
+
+To remove a file interactively:
+rm -i file.txt
+
+To forcefully remove a file without prompting:
+rm -f file.txt
+
+To remove a directory and its contents recursively:
+rm -r directory_name
+
+To remove an empty directory:
+rm -d empty_directory
+
+To remove files or directories with verbose output:
+rm -v file.txt directory_name
+
+NOTES
+
+- If neither -r nor -d is specified, rm will not remove directories.
+- The -f option suppresses error messages for nonexistent files and overrides the -i option.
+- Use caution with the -r option, as it will delete all files and subdirectories within the specified directory.
+
+EXIT STATUS
+
+- Returns 0 if all specified files or directories were successfully removed.
+- Returns a non-zero status if any file or directory could not be removed.

@@ -1,0 +1,41 @@
+
+NAME
+    cd - Change the current directory in a running shell process.
+
+SYNOPSIS
+    cd [directory]
+
+DESCRIPTION
+    The cd command is a built-in command used to change the current working directory within the running shell process. It takes one argument, the directory to which you wish to change. If no argument is given, it typically changes to the home directory.
+
+OPTIONS
+    [directory]
+        The path of the directory to switch to. If the directory is not valid or cannot be accessed, the command will fail.
+
+FUNCTIONALITY
+    1. The cd command checks if an argument is provided.
+    
+    2. If no argument is provided, it displays an error message:
+        "cd: expected argument"
+    
+    3. If an argument (directory path) is provided, the command attempts to change the working directory using the chdir() system call.
+    
+    4. If the chdir() call fails (e.g., the directory does not exist), an error message is printed using perror(), showing "cd failed".
+
+EXAMPLES
+    cd /home/user/documents
+        Changes the current directory to /home/user/documents.
+
+    cd
+        Typically changes the current directory to the user's home directory (behavior varies by shell implementation).
+
+ERROR HANDLING
+    - No argument:
+        If no argument is provided, an error message is displayed:
+        "cd: expected argument"
+    
+    - chdir() failure:
+        If the chdir() system call fails (e.g., due to an invalid directory path), an error message is printed using perror(), showing "cd failed".
+
+SEE ALSO
+    chdir(2) - The system call used by cd to change the current working directory.

@@ -1,0 +1,51 @@
+ NAME
+touch - change file timestamps
+
+## SYNOPSIS
+
+touch [-a] [-c] filename
+
+## DESCRIPTION
+The **touch** utility updates the access and modification times of each specified file to the current time. By default, if the file does not exist, it is created with default permissions.
+
+### OPTIONS
+  -a 
+  Change only the access time. The modification time remains unchanged.
+
+  -c
+  Do not create any files. If a specified file does not exist, no action is taken, and no error message is displayed.
+
+  OPERANDS
+- filename**  
+  The name of the file for which the timestamps are to be updated. If the -c option is not specified and the file does not exist, it will be created.
+
+## EXIT STATUS
+-  0 
+  Successful completion.
+
+- **>0**  
+  An error occurred.
+
+## EXAMPLES
+- Update both access and modification times of file.txt:
+     
+  touch file.txt
+     
+
+- Update only the access time of file.txt:
+     
+  touch -a file.txt
+     
+
+- Do not create file.txt if it does not exist:
+     
+  touch -c file.txt
+     
+
+## NOTES
+- The program uses the utimensat system call to update the timestamps. If the -a option is specified, only the access time is updated; otherwise, both access and modification times are updated.
+- The program uses the [open](https://man7.org/linux/man-pages/man2/open.2.html) system call to create the file if it does not exist and the -c option is not specified.
+
+## AUTHOR
+This manual page was written for a C implementation of the touch command.
+EOF

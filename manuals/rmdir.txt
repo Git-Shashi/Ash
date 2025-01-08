@@ -1,0 +1,47 @@
+
+
+## NAME
+rmdir - remove empty directories
+
+## SYNOPSIS
+
+rmdir [-p] [-v] directory...
+
+## DESCRIPTION
+The rmdir program is a simplified version of the Unix rmdir command. It removes the specified directories, provided they are empty. It also offers options to remove parent directories and to provide verbose output.
+
+## OPTIONS
+- -p
+  - Remove the specified directory and its parent directories if they become empty. This option allows for recursive removal of directories up the path hierarchy.
+  
+- -v
+  - Enable verbose mode. The program will print a message each time a directory is successfully removed.
+
+## USAGE
+To use the rmdir program, simply run the command with the desired options and directories:
+
+rmdir [-p] [-v] directory...
+
+### EXAMPLES
+- Remove a single directory:
+  
+  rmdir mydir
+  
+- Remove a directory and its parent directories if they become empty:
+  
+  rmdir -p mydir/subdir
+  
+- Remove a directory with verbose output:
+  
+  rmdir -v mydir
+  
+- Remove a directory and its parent directories with verbose output:
+  
+  rmdir -pv mydir/subdir
+
+## NOTES
+- The program only removes empty directories. If a directory contains files or other directories, it will not be removed.
+- The program does not handle all edge cases and permissions as the actual rmdir command does. It is intended as a basic implementation for educational purposes.
+
+## AUTHOR
+This program was implemented as a simplified version of the rmdir command for demonstration purposes.

@@ -1,0 +1,57 @@
+
+NAME
+chmod - Change file permissions based on an octal representation.
+
+SYNOPSIS
+    ./chmod <octal-permissions> <file>
+
+DESCRIPTION
+    The chmod program is used to change the permissions of a file by specifying them in octal format. This tool allows users to modify a file’s read, write, and execute permissions for the owner, group, and others.
+
+OPTIONS
+    <octal-permissions>
+        A string that represents the file permissions in octal format (e.g., 755, 644). The octal value is converted internally using strtol() to be applied as the new permissions.
+    
+    <file>
+        The name of the file for which the permissions should be changed.
+
+FUNCTIONALITY
+    1. Argument validation:
+        The program expects exactly two arguments. If the user provides an incorrect number of arguments, the program will print a usage message and exit with an error.
+    
+    2. Permission conversion:
+        The octal permissions (first argument) are converted from a string to an octal number using the strtol() function with a base of 8.
+    
+    3. Permission change:
+        The program uses the chmod() system call to change the permissions of the file specified by the second argument.
+    
+    4. Success message:
+        If the permission change is successful, the program will print a message confirming the new permissions.
+
+    5. Error handling:
+        If the chmod() call fails, the program will display an appropriate error message using perror().
+
+EXAMPLES
+    chmod 755 myfile.txt
+        This example changes the permissions of myfile.txt to rwxr-xr-x:
+        - Owner: Read, write, and execute (7)
+        - Group: Read and execute (5)
+        - Others: Read and execute (5)
+
+ERROR HANDLING
+    - Incorrect argument count:
+        If fewer than or more than two arguments are provided, the program will print the following usage message and exit:
+        Usage: ./chmod <octal-permissions> <file>
+    
+    - chmod() system call failure:
+        If the chmod() function fails (e.g., file not found or insufficient permissions), an error message will be printed using perror() to indicate the cause of the failure.
+
+EXIT STATUS
+    0: Success. The file's permissions were changed.
+    1: Failure. An error occurred (invalid arguments, system call failure, etc.).
+
+SEE ALSO
+    chmod(1) - Manual page for the shell command chmod used in Unix-like systems.
+    chmod(2) - Manual page for the system call chmod() used in C programs to change file permissions.
+
+
